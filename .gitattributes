@@ -1,0 +1,47 @@
+# ==========================================================================
+# LineBR Legacy — .gitattributes
+# Preserva os bytes das árvores de referência (Base Zero) e normaliza apenas
+# o que for EDITADO no desenvolvimento futuro. Nenhum arquivo existente é
+# reescrito por este arquivo (não há renormalização retroativa).
+# ==========================================================================
+
+# Padrão: detectar texto automaticamente
+* text=auto
+
+# --- Binários: nunca converter EOL, sem diff textual ---
+*.jar   binary
+*.class binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.bmp   binary
+*.ico   binary
+*.zip   binary
+*.rar   binary
+*.gz    binary
+*.7z    binary
+*.nb3   binary
+*.dat   binary
+
+# --- Scripts: EOL determinístico por plataforma ---
+*.sh  text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# --- Código e dados textuais da aCis ---
+*.java       text
+*.xml        text diff=java
+*.htm        text
+*.html       text
+*.sql        text
+*.properties text
+*.txt        text
+*.md         text eol=lf
+
+# ==========================================================================
+# ÚLTIMA REGRA (vence todas as acima): árvore PRESERVADA do runtime.
+# Nunca normalizar EOL, tratar byte-a-byte — mantém a Base Zero intacta.
+# ==========================================================================
+runtime-reference/** -text -diff
+

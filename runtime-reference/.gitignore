@@ -1,0 +1,40 @@
+# ==========================================================================
+# LineBR Legacy — .gitignore (Base Zero / aCis)
+# --------------------------------------------------------------------------
+# Ignora APENAS artefatos transitórios/runtime, IDE e SO.
+# NENHUM arquivo da base aCis é ignorado: datapack (.htm/.xml), SQL (.sql),
+# configs (.properties/.txt), scripts (.sh/.bat), geodata e os binários do
+# servidor (libs/*.jar) SÃO versionados de propósito (é a base compilada).
+# ==========================================================================
+
+# --- Logs de runtime (gerados ao executar login/gameserver) ---
+**/log/
+**/logs/
+*.log
+
+# --- Lock files de log/runtime ---
+*.lck
+
+# --- IDE / editores ---
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+*.launch
+
+# --- Sistema operacional / OneDrive ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+*~
+~$*
+
+# --- Artefatos de build (caso, no futuro, o SOURCE seja compilado aqui) ---
+/build/
+/dist/
+/out/
+/bin/
+*.class
