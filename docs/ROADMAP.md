@@ -24,7 +24,9 @@ Aplicar as revisões oficiais da aCis, uma de cada vez, sobre `source/`.
 Provar que a source compila e roda.
 - [x] Ambiente de build: **JDK 21.0.4 (Temurin) + Apache Ant 1.10.14** (portável em `C:\dev\tools`).
 - [x] Compilar gameserver + loginserver (2.343 `.java`, 0 warnings/erros) + datapack. Ver [BUILD_VALIDATION.md](BUILD_VALIDATION.md).
-- [ ] Servidor sobe (login + game) contra MariaDB local. *(pendente — próxima sprint)*
+- [x] Servidor sobe (login + game) contra MariaDB local — Sprint 002, 0 erros. Ver [RUNTIME_VALIDATION.md](RUNTIME_VALIDATION.md) e [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md).
+
+> **FASE 1 (Fundação) CONCLUÍDA** — arquitetura congelada + build validado + runtime validado. Pronta para merge (aguarda aprovação) e para a FASE 2 (revisão 410).
 
 ## FASE 4 — Comparação com o runtime  🟢 concluída (Sprint 001, 2026-07-15)
 Garantir equivalência com o binário original.
