@@ -20,16 +20,16 @@ Aplicar as revisões oficiais da aCis, uma de cada vez, sobre `source/`.
 - [ ] **410 → 411**: aplicar em `development/rev-411`, changelog, tag `acis-411`.
 - Regra: nada de customs nesta fase (Retail First puro).
 
-## FASE 3 — Build validado
+## FASE 3 — Build validado  🟢 concluída (Sprint 001, 2026-07-15)
 Provar que a source compila e roda.
-- [ ] Ambiente de build: **JDK 21 + Apache Ant**.
-- [ ] Compilar gameserver + loginserver + datapack.
-- [ ] Servidor sobe (login + game) contra MariaDB local.
+- [x] Ambiente de build: **JDK 21.0.4 (Temurin) + Apache Ant 1.10.14** (portável em `C:\dev\tools`).
+- [x] Compilar gameserver + loginserver (2.343 `.java`, 0 warnings/erros) + datapack. Ver [BUILD_VALIDATION.md](BUILD_VALIDATION.md).
+- [ ] Servidor sobe (login + game) contra MariaDB local. *(pendente — próxima sprint)*
 
-## FASE 4 — Comparação com o runtime
+## FASE 4 — Comparação com o runtime  🟢 concluída (Sprint 001, 2026-07-15)
 Garantir equivalência com o binário original.
-- [ ] Comparar o `l2jserver.jar` compilado (rev 409) com `runtime-reference/` (classes/estrutura).
-- [ ] Documentar quaisquer diferenças esperadas (timestamps/ordem) vs. inesperadas.
+- [x] Comparado o `l2jserver.jar` compilado com `runtime-reference/`: **2.881/2.881 classes byte-idênticas**; única diferença = `Created-By` do manifest (Temurin vs Oracle).
+- [x] Diferenças documentadas em [BUILD_VALIDATION.md](BUILD_VALIDATION.md) (esperadas: fornecedor do JDK; nenhuma inesperada).
 
 ## FASE 5 — Infraestrutura
 Preparar hospedagem profissional.
