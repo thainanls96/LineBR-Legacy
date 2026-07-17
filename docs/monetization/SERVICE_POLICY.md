@@ -46,7 +46,7 @@ Todos obedecem a Regra Mestra: *economizam tempo/resolvem problemas, não substi
 ### Mudança de Nick / Clan Rename — reputação é mecânica social
 No L2, **o nome é a reputação**. Rivalidades, listas de KOS, confiança em comércio — tudo se ancora no nome. Trocar de nome permite **escapar da própria reputação** (o PK que recomeça limpo, o golpista que reabre negócio).
 
-Não é P2W, mas **é** interferência no tecido social ([SOCIAL_PHILOSOPHY §8](../game-design/SOCIAL_PHILOSOPHY.md)).
+Não é P2W, mas **é** interferência no tecido social ([SOCIAL_PHILOSOPHY §8](../design/SOCIAL_PHILOSOPHY.md)).
 **Mitigação sugerida:** histórico público de nomes anteriores, ou *cooldown* longo entre trocas.
 
 ## Fato técnico (EV-001)

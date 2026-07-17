@@ -10,7 +10,7 @@
 - **Sem Pay To Win.**
 - **Todo poder do personagem deve ser conquistado exclusivamente jogando.**
 
-Nunca serão vendidos: poder, equipamentos, Adena, XP, SP, Hero, Noble, Buffs, Boss, itens criados. Lista completa e permanente em [FORBIDDEN_FEATURES.md](FORBIDDEN_FEATURES.md).
+Nunca serão vendidos: poder, equipamentos, Adena, XP, SP, Hero, Noble, Buffs, Boss, itens criados. Lista completa e permanente em [FORBIDDEN_FEATURES.md](../constitution/FORBIDDEN_FEATURES.md).
 
 ## 2. Regra Mestra
 
@@ -47,7 +47,7 @@ Todo recurso futuro deverá obedecer esta regra. Ela é o **teste** de qualquer 
 | Marketplace (vender) | ✅ (por decisão do Owner) | custom — não existe na aCis |
 | Auto Loot (farm comum) | ✅ (por decisão do Owner) | **exclusivo VIP Gold** — ver [DECISION_LOG M-004](DECISION_LOG.md) |
 | Serviços administrativos | ✅ | ver [SERVICE_POLICY.md](SERVICE_POLICY.md) |
-| **Qualquer coisa que dê poder** | ❌ | [FORBIDDEN_FEATURES.md](FORBIDDEN_FEATURES.md) |
+| **Qualquer coisa que dê poder** | ❌ | [FORBIDDEN_FEATURES.md](../constitution/FORBIDDEN_FEATURES.md) |
 
 ## 6. Auto Loot — decisão oficial
 
@@ -63,7 +63,7 @@ Todo recurso futuro deverá obedecer esta regra. Ela é o **teste** de qualquer 
 
 Esta política **decide o que o retail não dita**: o Interlude era assinatura (todos pagavam igual, ninguém comprava poder). Esse modelo não é replicável num servidor privado, então o projeto precisa de uma política própria — e ela está aqui.
 
-⚠️ **Registro honesto e permanente:** VIP, Offline Shop, Marketplace e Auto Loot por jogador **não existem no Interlude retail**. São **customizações**. Pelo [ADR-003](../ADR/ADR-003-retail-first.md), customizações exigem enquadramento (opcional / problema comprovado / infra) e ADR próprio. As tensões estão registradas no [DECISION_LOG](DECISION_LOG.md) — não para reabrir a decisão do Owner, mas porque **um projeto que registra só o que deu certo não tem memória, tem propaganda**.
+⚠️ **Registro honesto e permanente:** VIP, Offline Shop, Marketplace e Auto Loot por jogador **não existem no Interlude retail**. São **customizações**. Pelo [ADR-003](../adr/ADR-003-retail-first.md), customizações exigem enquadramento (opcional / problema comprovado / infra) e ADR próprio. As tensões estão registradas no [DECISION_LOG](DECISION_LOG.md) — não para reabrir a decisão do Owner, mas porque **um projeto que registra só o que deu certo não tem memória, tem propaganda**.
 
 ## 8. Sustentabilidade
 Ver [BUSINESS_MODEL.md](BUSINESS_MODEL.md).

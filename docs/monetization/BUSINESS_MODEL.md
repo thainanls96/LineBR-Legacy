@@ -23,7 +23,7 @@
 |-------|----------|------------|
 | VPS | recorrente | hoje o LineBR cabe numa VPS modesta |
 | Domínio | anual | baixo |
-| Backup / storage | recorrente | crítico ([P-13](../game-design/DESIGN_PRINCIPLES.md) — tempo do jogador é sagrado) |
+| Backup / storage | recorrente | crítico ([P-13](../constitution/DESIGN_PRINCIPLES.md) — tempo do jogador é sagrado) |
 | Proteção DDoS | recorrente | vira necessidade quando o servidor cresce |
 | **Tempo do Owner** | 🔴 **o maior custo real** | desenvolvimento, suporte, moderação, serviços administrativos manuais |
 
@@ -38,7 +38,7 @@ Historicamente, é assim que servidores caem — não por uma decisão, mas por 
 | Mecanismo de defesa | Como funciona |
 |---------------------|---------------|
 | **Escopo congelado** | os benefícios de cada tier são fixados em [VIP_SYSTEM](VIP_SYSTEM.md); ampliar exige ADR + revisão |
-| **Lista proibida imutável** | [FORBIDDEN_FEATURES](FORBIDDEN_FEATURES.md) só cresce, nunca encolhe |
+| **Lista proibida imutável** | [FORBIDDEN_FEATURES](../constitution/FORBIDDEN_FEATURES.md) só cresce, nunca encolhe |
 | **Teste do competidor** | aplicado a toda proposta nova |
 | **Transparência** | o que é vendido é público |
 

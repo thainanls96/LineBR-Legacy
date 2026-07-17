@@ -35,7 +35,7 @@
 **Objetivo:** funcionar como **dreno de Adena** (*sink*), retirando moeda de circulação a cada transação.
 
 ### Por que isto importa (análise)
-A economia do Interlude depende do equilíbrio **faucet ≤ sink** ([ECONOMY_PHILOSOPHY](../game-design/ECONOMY_PHILOSOPHY.md)). Um Marketplace **sem taxa** é neutro na criação de Adena, mas é **negativo** para os drenos existentes: ele **substitui** o comércio presencial em Giran, que hoje carrega custos implícitos (tempo, deslocamento, teleporte). Ou seja: sem taxa, o Marketplace **remove** drenos indiretos sem repor nenhum.
+A economia do Interlude depende do equilíbrio **faucet ≤ sink** ([ECONOMY_PHILOSOPHY](../design/ECONOMY_PHILOSOPHY.md)). Um Marketplace **sem taxa** é neutro na criação de Adena, mas é **negativo** para os drenos existentes: ele **substitui** o comércio presencial em Giran, que hoje carrega custos implícitos (tempo, deslocamento, teleporte). Ou seja: sem taxa, o Marketplace **remove** drenos indiretos sem repor nenhum.
 
 Com taxa, ele passa a ser **um dos drenos mais eficientes possíveis** — porque incide sobre a riqueza que efetivamente circula, e escala junto com a atividade econômica.
 
@@ -48,8 +48,8 @@ Com taxa, ele passa a ser **um dos drenos mais eficientes possíveis** — porqu
 
 Implicações a considerar em qualquer implementação futura:
 - **Protocolo:** ⚠️ o Interlude não tem UI nativa de marketplace → provável uso de Community Board (BBS) + HTML, que **é** nativo.
-- **Segurança:** todo sistema de troca é vetor de **dupe** — o risco mais grave da economia ([ECONOMY §11](../game-design/ECONOMY_PHILOSOPHY.md)).
-- **Retail First:** é custom → exige ADR ([ADR-003](../ADR/ADR-003-retail-first.md)).
+- **Segurança:** todo sistema de troca é vetor de **dupe** — o risco mais grave da economia ([ECONOMY §11](../design/ECONOMY_PHILOSOPHY.md)).
+- **Retail First:** é custom → exige ADR ([ADR-003](../adr/ADR-003-retail-first.md)).
 
 ## Pendências
 | # | Pendência |

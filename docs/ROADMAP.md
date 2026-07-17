@@ -1,60 +1,97 @@
-# Roadmap — LineBR Legacy
+# Roadmap Oficial — LineBR Legacy
 
-Plano de evolução em fases. Cada fase concluída é registrada aqui (data + tag/commit) e, quando houver decisão arquitetural, um ADR.
-
-> **Estado atual:** FASE 1 (Fundação) em conclusão — arquitetura e documentação sendo congeladas. Nenhuma revisão aplicada, nenhum código alterado.
+> Plano definitivo do projeto. Supera o roadmap original ([archive/ROADMAP.original.md](archive/ROADMAP.original.md)) e absorve o [ROADMAP_BASELINE](knowledge/baseline/ROADMAP_BASELINE.md) (que segue válido como ordem **interna** de auditorias).
 
 ---
 
-## FASE 1 — Fundação  🟡 em andamento
-Estabelecer a base profissional do projeto.
-- [x] Importar runtime original (Base Zero) → tag `acis-409-runtime-base`.
-- [x] Confirmar source oficial (Tryskell/aCis 409) e auditar correspondência com o runtime.
-- [x] Migrar para estrutura de desenvolvimento (`source/`, `runtime-reference/`, `database/`, `docs/`, `tools/`).
-- [x] Congelar arquitetura e padrões (ADR-001..005, Filosofia, Manifesto, Contributing, este Roadmap).
-- [ ] Aprovação e merge da migração para `main` (aguarda o dono).
+## Visão geral
 
-## FASE 2 — Correções oficiais
-Aplicar as revisões oficiais da aCis, uma de cada vez, sobre `source/`.
-- [ ] **409 → 410**: obter diff oficial, aplicar em `development/rev-410`, documentar changelog, tag `acis-410`.
-- [ ] **410 → 411**: aplicar em `development/rev-411`, changelog, tag `acis-411`.
-- Regra: nada de customs nesta fase (Retail First puro).
-
-## FASE 3 — Build validado  🟢 concluída (Sprint 001, 2026-07-15)
-Provar que a source compila e roda.
-- [x] Ambiente de build: **JDK 21.0.4 (Temurin) + Apache Ant 1.10.14** (portável em `C:\dev\tools`).
-- [x] Compilar gameserver + loginserver (2.343 `.java`, 0 warnings/erros) + datapack. Ver [BUILD_VALIDATION.md](BUILD_VALIDATION.md).
-- [x] Servidor sobe (login + game) contra MariaDB local — Sprint 002, 0 erros. Ver [RUNTIME_VALIDATION.md](RUNTIME_VALIDATION.md) e [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md).
-
-> **FASE 1 (Fundação) CONCLUÍDA** — arquitetura congelada + build validado + runtime validado. Pronta para merge (aguarda aprovação) e para a FASE 2 (revisão 410).
-
-## FASE 4 — Comparação com o runtime  🟢 concluída (Sprint 001, 2026-07-15)
-Garantir equivalência com o binário original.
-- [x] Comparado o `l2jserver.jar` compilado com `runtime-reference/`: **2.881/2.881 classes byte-idênticas**; única diferença = `Created-By` do manifest (Temurin vs Oracle).
-- [x] Diferenças documentadas em [BUILD_VALIDATION.md](BUILD_VALIDATION.md) (esperadas: fornecedor do JDK; nenhuma inesperada).
-
-## FASE 5 — Infraestrutura
-Preparar hospedagem profissional.
-- [ ] VPS: usuário de app não-root, MariaDB dedicado, HexID/porta 9014 em `127.0.0.1`, firewall (2106/7777 públicas).
-- [ ] CI (build automático), backups automatizados do `l2jdb`/datapack, deploy reproduzível.
-
-## FASE 6 — Servidor de testes
-Ambiente interno para validar comportamento.
-- [ ] Deploy de staging; testes de gameplay retail (spawns, quests, sieges, economia).
-- [ ] Correções de bugs encontrados (documentadas).
-
-## FASE 7 — Beta fechado
-Validação com jogadores convidados.
-- [ ] Grupo restrito; coleta de feedback; observabilidade (logs/métricas).
-- [ ] Ajustes de estabilidade e balanceamento retail.
-
-## FASE 8 — Lançamento
-Abertura pública.
-- [ ] Hardening final de segurança e performance.
-- [ ] Site, comunicação, políticas.
-- [ ] Go-live e monitoramento contínuo.
+| Fase | Nome | Status |
+|:----:|------|:------:|
+| **1** | Fundação | ✅ **CONCLUÍDA** |
+| **2** | Documentação | ✅ **CONCLUÍDA** (Sprint 010 — congelada) |
+| **3** | Infraestrutura | 🔜 **PRÓXIMA** |
+| **4** | Implementação | ⬜ |
+| **5** | Testes | ⬜ |
+| **6** | Balanceamento | ⬜ |
+| **7** | Beta | ⬜ |
+| **8** | Release | ⬜ |
 
 ---
 
-### Camada de customizações (pós-fundação)
-As customizações do LineBR (opcionais, Retail First) entram **somente após** a base 411 estar validada, como `LineBR Patch 001, 002, …` (ver [ADR-004](ADR/ADR-004-estrategia-versionamento.md)) — cada uma opcional, justificada e reversível.
+## ✅ FASE 1 — Fundação (concluída)
+- [x] Base Zero preservada (tag `acis-409-runtime-base`, commit `d7c8881`)
+- [x] Source oficial aCis 409 adotada (`Tryskell/acis_public @ 55ff8a4e`)
+- [x] Estrutura de repositório profissional (`source/` + `runtime-reference/`)
+- [x] **Build validado** — 2.881/2.881 classes byte-idênticas ao runtime
+- [x] **Runtime validado** — login + game operacionais, 0 erros
+- [x] ADRs 001–005 congelados
+
+## ✅ FASE 2 — Documentação (concluída — Sprint 010)
+- [x] Metodologia de evidência (escala ★, política de aceitação)
+- [x] Baseline Retail (63 sistemas catalogados, registro de evidências)
+- [x] Auditoria de Movement (1º sistema)
+- [x] Game Design Bible + Monetização
+- [x] **LineBR Legacy Bible** (Constituição — 101 decisões)
+- [x] **Consolidação documental** — 73 docs unificados, estrutura por autoridade, 0 links quebrados
+- [x] **Documentação CONGELADA** ([DOCUMENTATION_POLICY](DOCUMENTATION_POLICY.md))
+
+## 🔜 FASE 3 — Infraestrutura (próxima)
+> Pré-requisitos técnicos. **Nada de gameplay ainda.**
+
+- [ ] **🔴 Geodata Interlude** — obter e habilitar (formato L2OFF, 139 regiões)
+      *Bloqueador crítico: sem ela não há pathfinding nem colisão* ([OD-01](specification/OPEN_DECISIONS.md))
+- [ ] **Mesclar as branches na `main`** — hoje há 8 branches; PR #1 aberto desde a Sprint 002
+- [ ] **ADRs das customs aprovadas** (VIP, Marketplace, Offline Shop, Hero Skin, Auto Loot, rates escalonadas) — exigidos pelo [ADR-003](adr/ADR-003-retail-first.md)
+- [ ] CI de build (JDK 21 + Ant) no GitHub Actions
+- [ ] Instrumentação de economia (medir faucet/sink) — infra, não gameplay
+- [ ] VPS: usuário de app não-root, MariaDB dedicado, porta 9014 em `127.0.0.1`, firewall, backups
+
+## ⬜ FASE 4 — Implementação
+> Ordem por dependência ([DEPENDENCY_MAP](knowledge/baseline/DEPENDENCY_MAP.md)). **Uma custom por vez**, cada uma com Build → Runtime → Logs → Commit.
+
+**4.1 — Configuração (zero custom)**
+- [ ] Economia 1x (já é o nativo — apenas confirmar)
+- [ ] `AutoLearnSkills = False` (já é o nativo)
+- [ ] NPC Buffer nativo (`SchemeBuffer`) — level 🔴 pendente ([OD-02](specification/OPEN_DECISIONS.md))
+
+**4.2 — Customs aprovadas**
+- [ ] Rates escalonadas por faixa (3x/2x/1x/0.75x) — exige custom
+- [ ] VIP (Bronze/Silver/Gold)
+- [ ] Auto Loot por jogador (VIP Gold)
+- [ ] Offline Shop
+- [ ] Marketplace + taxas (nascem juntos)
+- [ ] Hero Dynasty Skin — 🔴 depende de [OD-09](specification/OPEN_DECISIONS.md) (patch de cliente?)
+
+## ⬜ FASE 5 — Testes
+- [ ] Suite de validação por sistema
+- [ ] Testes de carga
+- [ ] Auditoria anti-dupe (obrigatória antes de abrir Marketplace/Trade)
+- [ ] Validação de fluxo completo com cliente Interlude real
+
+## ⬜ FASE 6 — Balanceamento
+- [ ] Medir economia real (faucet × sink, adena em circulação, concentração)
+- [ ] Validar a curva de rates na prática
+- [ ] Ajustes **com dados**, nunca por opinião
+
+## ⬜ FASE 7 — Beta
+- [ ] Beta fechado (grupo restrito)
+- [ ] Observabilidade (logs/métricas)
+- [ ] Correções de estabilidade
+- [ ] Definir política de punição, denúncia e moderação
+
+## ⬜ FASE 8 — Release
+- [ ] Hardening final (segurança/performance)
+- [ ] Site, comunicação, políticas públicas
+- [ ] Go-live e monitoramento
+
+---
+
+## Trilha paralela — Baseline (contínua, não bloqueia)
+As auditorias dos 62 sistemas restantes seguem pela ordem do [ROADMAP_BASELINE](knowledge/baseline/ROADMAP_BASELINE.md): GeoData → Combat → Skills → AI → Economia → Conteúdo. **Não bloqueiam a Fase 3/4**, mas alimentam a qualidade de tudo.
+
+## O gargalo real
+> **A documentação não é mais o gargalo.** As três coisas que travam o projeto hoje são:
+> 1. **Geodata** (dado — barato, impacto máximo)
+> 2. **Merge das branches** (organização)
+> 3. **Decisões pendentes do Owner** ([OPEN_DECISIONS](specification/OPEN_DECISIONS.md) — 16 itens)

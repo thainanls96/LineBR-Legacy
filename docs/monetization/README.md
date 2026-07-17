@@ -21,7 +21,7 @@ Base imutável do projeto: **Retail First · Interlude 2007 · Sem Pay To Win ·
 | [VIP_SYSTEM.md](VIP_SYSTEM.md) | VIP Bronze / Silver / Gold — benefícios oficiais |
 | [MARKETPLACE.md](MARKETPLACE.md) | Marketplace P2P (só itens de jogadores) |
 | [SERVICE_POLICY.md](SERVICE_POLICY.md) | Serviços administrativos |
-| [FORBIDDEN_FEATURES.md](FORBIDDEN_FEATURES.md) | Lista permanente do que **nunca** será vendido |
+| [FORBIDDEN_FEATURES.md](../constitution/FORBIDDEN_FEATURES.md) | Lista permanente do que **nunca** será vendido |
 | [BUSINESS_MODEL.md](BUSINESS_MODEL.md) | Modelo de receita e sustentabilidade |
 | [DECISION_LOG.md](DECISION_LOG.md) | Registro de decisões (M-001…) |
 
@@ -29,10 +29,10 @@ Base imutável do projeto: **Retail First · Interlude 2007 · Sem Pay To Win ·
 
 | Documento | Relação |
 |-----------|---------|
-| [game-design/MONETIZATION_PHILOSOPHY.md](../game-design/MONETIZATION_PHILOSOPHY.md) | ⚠️ **Superado por esta pasta.** Era exploratório (apresentava opções); esta pasta traz as **decisões do Owner**. Consolidar na fusão das branches |
-| [game-design/DESIGN_PRINCIPLES.md](../game-design/DESIGN_PRINCIPLES.md) | P-11 (anti-P2W) é a raiz desta política |
-| [ADR-003 Retail First](../ADR/ADR-003-retail-first.md) | Governa o que pode divergir do Interlude |
-| [retail-knowledge-base/CHANGE_ACCEPTANCE_POLICY](../retail-knowledge-base/CHANGE_ACCEPTANCE_POLICY.md) | Rege como qualquer item daqui poderia um dia ser implementado |
+| [game-design/MONETIZATION_PHILOSOPHY.md](../archive/MONETIZATION_PHILOSOPHY.game-design.superseded.md) | ⚠️ **Superado por esta pasta.** Era exploratório (apresentava opções); esta pasta traz as **decisões do Owner**. Consolidar na fusão das branches |
+| [game-design/DESIGN_PRINCIPLES.md](../constitution/DESIGN_PRINCIPLES.md) | P-11 (anti-P2W) é a raiz desta política |
+| [ADR-003 Retail First](../adr/ADR-003-retail-first.md) | Governa o que pode divergir do Interlude |
+| [retail-knowledge-base/CHANGE_ACCEPTANCE_POLICY](../knowledge/methodology/CHANGE_ACCEPTANCE_POLICY.md) | Rege como qualquer item daqui poderia um dia ser implementado |
 
 ## Estado
 

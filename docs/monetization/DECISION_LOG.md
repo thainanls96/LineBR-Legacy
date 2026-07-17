@@ -35,7 +35,7 @@
 | **Motivação** | Receita **recorrente** — única fonte previsível sem vender poder |
 | **Alternativas descartadas** | Só doação (receita instável); tier único (menos escalável) |
 | **Impacto** | Alto — espinha dorsal do modelo |
-| **Risco registrado** | Pressão permanente para ampliar benefícios sob aperto financeiro → mitigado por escopo congelado + [FORBIDDEN_FEATURES](FORBIDDEN_FEATURES.md) |
+| **Risco registrado** | Pressão permanente para ampliar benefícios sob aperto financeiro → mitigado por escopo congelado + [FORBIDDEN_FEATURES](../constitution/FORBIDDEN_FEATURES.md) |
 | **Status** | ✅ Decidido |
 
 ### M-003 · Warehouse / Inventory expandidos no VIP
@@ -44,7 +44,7 @@
 | **Descrição** | Bronze expandido → Silver maior → Gold máximo |
 | **Motivação** | Conveniência de logística; economiza tempo (menos viagens ao warehouse) |
 | **Fato técnico (EV-001)** | Na aCis 409 estes limites são **mecânica de classe**: `MaximumSlotsForNoDwarf = 80` · **`ForDwarf = 100`**; `WarehouseNoDwarf = 100` · **`ForDwarf = 120`** · `Clan = 200`. O **Dwarf tem +20 slots nativos** como vantagem de classe |
-| **Tensão registrada** | ⚠️ Se um VIP não-Dwarf superar os slots nativos do Dwarf, a vantagem de classe do Dwarf é **neutralizada por pagamento**. Logística é poder econômico no L2 (transporte de materiais = capacidade de comércio). O documento anterior do projeto ([game-design/MONETIZATION §4](../game-design/MONETIZATION_PHILOSOPHY.md)) listava "warehouse/inventário maior" como **nunca vender** — esta decisão **supera** aquele item |
+| **Tensão registrada** | ⚠️ Se um VIP não-Dwarf superar os slots nativos do Dwarf, a vantagem de classe do Dwarf é **neutralizada por pagamento**. Logística é poder econômico no L2 (transporte de materiais = capacidade de comércio). O documento anterior do projeto ([game-design/MONETIZATION §4](../archive/MONETIZATION_PHILOSOPHY.game-design.superseded.md)) listava "warehouse/inventário maior" como **nunca vender** — esta decisão **supera** aquele item |
 | **Mitigação sugerida** | Teto do VIP **≤** limite nativo do Dwarf (ex.: não-Dwarf VIP chega no máximo a 100/120, nunca acima); Dwarf VIP mantém o degrau relativo |
 | **Impacto** | Médio — depende inteiramente dos números escolhidos (pendência V-1) |
 | **Status** | ✅ Decidido (números em aberto) |
@@ -55,7 +55,7 @@
 | **Descrição** | Auto Loot existe, exclusivo Gold. Coleta Adena, drops comuns, materiais, recipes, parts, equipamentos comuns, itens de farm. **Não** funciona em Raid Boss, Boss, Eventos e drops de Boss |
 | **Motivação** | **Aprovada pelo Owner.** Economiza tempo (não substitui o esforço de matar o mob) |
 | **Fato técnico (EV-001)** | Auto Loot **existe na aCis 409** como **config global** (`AutoLoot = False` por padrão) + `AutoLootRaid` separado (também `False`). A distinção "farm comum × raid" **coincide** com a arquitetura nativa. Porém, **não há suporte nativo por jogador** → VIP-exclusivo exige **código custom** |
-| **Tensões registradas** | ⚠️ (1) **Não é retail** — o Interlude não tinha Auto Loot → é custom ([ADR-003](../ADR/ADR-003-retail-first.md) exige enquadramento). (2) **Teste do competidor:** dois jogadores idênticos farmando o mesmo spot — o Gold coleta sem parar, o não-VIP para para lootar → **diferença de Adena/hora**. É vantagem econômica adquirível com dinheiro. (3) A exclusão de Raid/Boss/Eventos **reduz** o impacto competitivo direto, mas não elimina o diferencial de farm |
+| **Tensões registradas** | ⚠️ (1) **Não é retail** — o Interlude não tinha Auto Loot → é custom ([ADR-003](../adr/ADR-003-retail-first.md) exige enquadramento). (2) **Teste do competidor:** dois jogadores idênticos farmando o mesmo spot — o Gold coleta sem parar, o não-VIP para para lootar → **diferença de Adena/hora**. É vantagem econômica adquirível com dinheiro. (3) A exclusão de Raid/Boss/Eventos **reduz** o impacto competitivo direto, mas não elimina o diferencial de farm |
 | **Alternativas não escolhidas** | Auto Loot global para todos (config nativa, `AutoLoot = True` — zero custom, zero P2W, mas zero receita); sem Auto Loot (retail puro) |
 | **Impacto** | Alto — é o benefício de maior valor percebido e o de maior tensão com a filosofia |
 | **Status** | ✅ **Decidido pelo Owner — não está em discussão** |
@@ -66,7 +66,7 @@
 | **Descrição** | Só itens de jogadores; pagamento em Adena; comprador = qualquer um; vendedor = só VIP. Limites: 3/10/20 anúncios; Gold com destaque |
 | **Motivação** | Conveniência de comércio + valor para o VIP; nunca injeta itens/Adena |
 | **Fato técnico (EV-001)** | **Não existe na aCis 409** (0 arquivos) → custom completo (dados, packets/BBS, SQL, UI) |
-| **Tensões registradas** | ⚠️ (1) **Não é retail**. (2) **Vender é privilégio pago** → o VIP participa da economia num canal que o não-VIP não acessa (comprar todos podem; **vender**, não). (3) Todo sistema de troca é **vetor de dupe** — o risco mais grave da economia. (4) Pode **esvaziar Giran** ([WORLD_IMPORTANCE](../game-design/WORLD_IMPORTANCE.md): "Giran vazia = servidor morto") |
+| **Tensões registradas** | ⚠️ (1) **Não é retail**. (2) **Vender é privilégio pago** → o VIP participa da economia num canal que o não-VIP não acessa (comprar todos podem; **vender**, não). (3) Todo sistema de troca é **vetor de dupe** — o risco mais grave da economia. (4) Pode **esvaziar Giran** ([WORLD_IMPORTANCE](../design/WORLD_IMPORTANCE.md): "Giran vazia = servidor morto") |
 | **Mitigação** | Taxas em Adena (M-006); auditoria anti-dupe obrigatória antes de implementar |
 | **Status** | ✅ Decidido |
 
@@ -86,12 +86,12 @@
 | **Motivação** | Define a **pressão** sobre a política. É a pergunta que precede todas as outras de monetização |
 | **Alternativas** | (a) bancado — VIP é bônus, pressão zero; (b) se paga — VIP é essencial, pressão permanente; (c) híbrido |
 | **Impacto** | 🔴 Máximo — determina a resistência do projeto no dia em que a conta apertar |
-| **Status** | 🔴 **EM ABERTO** (espelha [game-design D-003](../game-design/DECISION_LOG.md)) |
+| **Status** | 🔴 **EM ABERTO** (espelha [game-design D-003](../design/DECISION_LOG.md)) |
 
 ### M-008 · Lista de features proibidas
 | | |
 |---|---|
-| **Descrição** | Lista permanente do que nunca será vendido ([FORBIDDEN_FEATURES](FORBIDDEN_FEATURES.md)) |
+| **Descrição** | Lista permanente do que nunca será vendido ([FORBIDDEN_FEATURES](../constitution/FORBIDDEN_FEATURES.md)) |
 | **Motivação** | Decidir a frio o que será testado a quente |
 | **Impacto** | 🟢 Máximo — é a espinha dorsal da integridade |
 | **Regra** | A lista **só cresce**. Remover item exigiria ADR que supere o ADR-003 e o Princípio Final |
